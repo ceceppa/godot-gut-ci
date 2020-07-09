@@ -18,4 +18,3 @@ runs:
     - ${{ inputs.godot_version }}
     - ${{ inputs.unit_test }}
     - ${{ inputs.integration_test }}
-    - ${{ inputs.project_path }}
