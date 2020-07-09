@@ -1,5 +1,8 @@
 name: 'Godot GUT CI'
-description: 'Godot GUT CI'
+description: 'Run Godot GUT tests on CI'
+branding:
+  icon: alert-triangle
+  color: gray-dark
 inputs:
   godot_version:
     description: 'Godot Version'
