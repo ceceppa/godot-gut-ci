@@ -6,7 +6,7 @@ GODOT_VERSION=$1
 # Unit test path
 if [ -z "$2" ]
 then
-  UNIT_TEST_PATH=""
+  UNIT_TEST_PATH="res://tests/unit"
 else
   UNIT_TEST_PATH="-gdir=$2"
 fi
