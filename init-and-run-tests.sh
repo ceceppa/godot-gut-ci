@@ -6,9 +6,9 @@ GODOT_VERSION=$1
 # Unit test path
 if [ -z "$2" ]
 then
-  UNIT_TEST_PATH=""
+  UNIT_TEST_PATH="res://tests/unit"
 else
-  UNIT_TEST_PATH="-gdir=$2"
+  UNIT_TEST_PATH=$2
 fi
 
 # Integration test path
@@ -36,4 +36,4 @@ then
   cd test-project
 fi
 
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $UNIT_TEST_PATH $INTEGRATION_TEST_PATH
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH $INTEGRATION_TEST_PATH
