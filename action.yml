@@ -1,0 +1,21 @@
+name: 'Godot GUT CI'
+description: 'Godot GUT CI'
+inputs:
+  godot_version:
+    description: 'Godot Version'
+    required: false
+    default: '3.2.2'
+  unit_test:
+    description: 'Unit tests path'
+    required: true
+  integration_test:
+    description: 'Integration tests path'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.godot_version }}
+    - ${{ inputs.unit_test }}
+    - ${{ inputs.integration_test }}
+    - ${{ inputs.project_path }}

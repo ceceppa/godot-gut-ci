@@ -1,0 +1,16 @@
+name: "godot gut ci test"
+on: push
+
+jobs:
+  execute-gut:
+    name: Run GUT tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Godot GUT CI Test
+        uses: ./
+        with:
+          godot_version: 3.2.2
+          unit_test: res://tests/unit
