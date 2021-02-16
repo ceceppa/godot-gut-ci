@@ -54,7 +54,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker test
-        uses: ceceppa/godot-gut@master
+        uses: ceceppa/godot-gut-ci@master
         with:
           godot_version: 3.2.1 # uses godot 3.2.1
           integration_test: res://tests/integration # specify the path for the integration tests
