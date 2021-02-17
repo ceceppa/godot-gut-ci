@@ -20,7 +20,9 @@ else
 fi
 
 # Download Godot
-wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
+link="https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip"
+echo "Downloading: $link"
+wget $link
 
 # Unzip it
 unzip Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
