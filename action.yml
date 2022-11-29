@@ -19,5 +19,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.godot_version }}
-    - ${{ inputs.unit_test }}
-    - ${{ inputs.integration_test }}
+    - ${{ inputs.gut_params }}
