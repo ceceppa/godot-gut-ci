@@ -8,11 +8,8 @@ inputs:
     description: 'Godot Version'
     required: false
     default: '3.2.2'
-  unit_test:
-    description: 'Unit tests path'
-    required: true
-  integration_test:
-    description: 'Integration tests path'
+  gut_params:
+    description: 'GUT parameters (https://github.com/bitwes/Gut/wiki/Command-Line)'
     required: false
 runs:
   using: 'docker'
