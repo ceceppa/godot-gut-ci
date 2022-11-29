@@ -22,9 +22,9 @@ then
 fi
 
 echo Running GUT tests using params:
-echo \t$GUT_PARAMS
+echo  $GUT_PARAMS
 
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS > /tmp/gut.log#
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS > /tmp/gut.log 2>&1
 
 cat /tmp/gut.log
 
