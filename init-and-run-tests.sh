@@ -36,4 +36,7 @@ then
   cd test-project
 fi
 
+echo UNIT_TEST_PATH = $UNIT_TEST_PATH
+echo INTEGRATION_TEST_PATH = $INTEGRATION_TEST_PATH
+
 /usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH,$INTEGRATION_TEST_PATH
