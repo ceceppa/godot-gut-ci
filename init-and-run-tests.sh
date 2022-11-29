@@ -2,22 +2,7 @@
 set -e
 
 GODOT_VERSION=$1
-
-# Unit test path
-if [ -z "$2" ]
-then
-  UNIT_TEST_PATH="res://tests/unit"
-else
-  UNIT_TEST_PATH=$2
-fi
-
-# Integration test path
-if [ -z "$3" ]
-then
-  INTEGRATION_TEST_PATH=""
-else
-  INTEGRATION_TEST_PATH=",$3"
-fi
+GUT_PARAMS=$2
 
 # Download Godot
 wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
@@ -36,7 +21,6 @@ then
   cd test-project
 fi
 
-echo UNIT_TEST_PATH = $UNIT_TEST_PATH
-echo INTEGRATION_TEST_PATH = $INTEGRATION_TEST_PATH
-
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH,$INTEGRATION_TEST_PATH
+echo Running GUT tests using params:
+echo \t$GUT_PARAMS
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS
