@@ -36,4 +36,4 @@ then
   cd test-project
 fi
 
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH$INTEGRATION_TEST_PATH
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit -gdir=$UNIT_TEST_PATH,$INTEGRATION_TEST_PATH
