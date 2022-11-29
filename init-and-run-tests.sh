@@ -35,12 +35,14 @@ NO_TEST_RAN=$(cat $TEMP_FILE | grep "No tests ran")
 
 if [ ! -z "$NO_TEST_RAN" ]
 then
+  echo "No test ran. Please check your `gut_params`"
   exit 1
 fi
 
 HAS_FAILED=$(cat $TEMP_FILE | grep " [Failed]: ")
 if [ ! -z "$HAS_FAILED" ]
 then
+  echo "One or more test have failed"
   exit 1
 fi
 
