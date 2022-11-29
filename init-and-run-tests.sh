@@ -24,20 +24,21 @@ fi
 echo Running GUT tests using params:
 echo  $GUT_PARAMS
 
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS > /tmp/gut.log 2>&1
+TEMP_FILE=/tmp/gut.log
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS > $TEMP_FILE 2>&1
 
-cat /tmp/gut.log
+cat $TEMP_FILE
 
 # Godot always exists with error 0, but we want this action to fail in case of errors
 
-NO_TEST_RAN=$(cat temp | grep "No tests ran")
+NO_TEST_RAN=$(cat $TEMP_FILE | grep "No tests ran")
 
 if [ ! -z "$NO_TEST_RAN" ]
 then
   exit 1
 fi
 
-HAS_FAILED=$(cat temp | grep " [Failed]: ")
+HAS_FAILED=$(cat $TEMP_FILE | grep " [Failed]: ")
 if [ ! -z "$HAS_FAILED" ]
 then
   exit 1
