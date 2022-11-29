@@ -28,15 +28,14 @@ jobs:
         uses: ceceppa/godot-gut-ci@master
 ```
 
-### With
+### GUT parameters
 
-Some action parameter can be customised using the `with` property:
+The action parameter can be customised using the `with` property:
 
 |parameter|description|default|
 |---|---|---|
 |godot_version|The godot version you want to use to run your tests|3.2.2|
-|unit_test|The godot resource folder containing your unit tests|res://tests/unit|
-|integration_test|The godot resource folder containing your integration tests||
+|gut_params|The parameters to pass to GUT (https://github.com/bitwes/Gut/wiki/Command-Line)|
 
 **NOTE**: If you're customising `unit_test` or `integration_test`, don't forget to specify the `res://` prefix.
 
@@ -57,5 +56,5 @@ jobs:
         uses: ceceppa/godot-gut-ci@master
         with:
           godot_version: 3.2.1 # uses godot 3.2.1
-          integration_test: res://tests/integration # specify the path for the integration tests
+          gut_params: -gdir=res://tests -gsuffix=.test.gd -gprefix=
 ```
