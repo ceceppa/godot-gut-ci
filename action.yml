@@ -7,17 +7,14 @@ inputs:
   godot_version:
     description: 'Godot Version'
     required: false
-    default: '3.2.2'
-  unit_test:
-    description: 'Unit tests path'
-    required: true
-  integration_test:
-    description: 'Integration tests path'
+    default: '3.5.1'
+  gut_params:
+    description: 'GUT parameters (https://github.com/bitwes/Gut/wiki/Command-Line)'
     required: false
+    default: -gdir=res://tests
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.godot_version }}
-    - ${{ inputs.unit_test }}
-    - ${{ inputs.integration_test }}
+    - ${{ inputs.gut_params }}
