@@ -22,10 +22,10 @@ then
 fi
 
 echo Running GUT tests using params:
-echo "\t$GUT_PARAMS"
+echo "  -> $GUT_PARAMS"
 
 TEMP_FILE=/tmp/gut.log
-/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS > $TEMP_FILE 2>&1
+/usr/local/bin/godot -d -s --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS # > $TEMP_FILE 2>&1
 
 echo "LOG Output:"
 cat $TEMP_FILE
