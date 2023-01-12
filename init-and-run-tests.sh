@@ -34,7 +34,7 @@ then
   exit 1
 fi
 
-if  grep -q " [Failed]: " "$TEMP_FILE"
+if  grep -q "[Failed]:" "$TEMP_FILE"
 then
   echo "One or more test have failed"
   exit 1
