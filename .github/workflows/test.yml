@@ -2,8 +2,8 @@ name: "godot gut ci test"
 on: push
 
 jobs:
-  execute-gut:
-    name: Run GUT tests
+  gut-godot3:
+    name: Run GUT tests for Godot 3
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,3 +14,18 @@ jobs:
         with:
           godot_version: 3.2.2
           gut_params: -gdir=res://tests/unit
+          project_path: gut-ci-test-project/godot3
+
+  gut-godot4:
+    name: Run GUT tests for Godot 4
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Godot GUT CI Test
+        uses: ./
+        with:
+          godot_version: 4.1.2
+          gut_params: -gdir=res://tests/unit
+          project_path: gut-ci-test-project/godot4
