@@ -47,7 +47,7 @@ then
   exit 1
 fi
 
-if  ! grep -q "All tests passed!:" "$TEMP_FILE"
+if  ! grep -q "All tests passed!" "$TEMP_FILE"
 then
   echo "One or more test have failed"
   exit 1
