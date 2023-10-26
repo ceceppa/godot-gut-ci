@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Docker test
-        uses: ceceppa/godot-gut-ci@master
+        uses: ceceppa/godot-gut-ci@main
 ```
 
 ### GUT parameters
@@ -53,7 +53,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker test
-        uses: ceceppa/godot-gut-ci@master
+        uses: ceceppa/godot-gut-ci@main
         with:
           godot_version: 3.2.1 # uses godot 3.2.1
           gut_params: -gdir=res://tests -gsuffix=.test.gd -gprefix=
