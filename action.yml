@@ -12,9 +12,14 @@ inputs:
     description: 'GUT parameters (https://github.com/bitwes/Gut/wiki/Command-Line)'
     required: false
     default: -gdir=res://tests
+  project_path:
+    description: 'The project path. To be specified only if is not in the root folder'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.godot_version }}
     - ${{ inputs.gut_params }}
+    - ${{ inputs.project_path }}
