@@ -8,9 +8,11 @@ GODOT_BIN=/usr/local/bin/godot
 
 # Download Godot
 GODOT_PARAMS=
-is_version_4=$( [[ $version == 4* ]] && echo "true" || echo "false" )
+is_version_4=$( [[ $GODOT_VERSION == 4* ]] && echo "true" || echo "false" )
 
 if [[ $is_version_4 == "true" ]]; then
+  echo "Downloading Godot4"
+
   wget https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
 
   # Unzip it
@@ -18,6 +20,8 @@ if [[ $is_version_4 == "true" ]]; then
   mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 $GODOT_BIN
   GODOT_PARAMS="--headless"
 else
+  echo "Downloading Godot3"
+
   wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
 
   # Unzip it
