@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER "ceceppa" <info@ceceppa.me>
 
 # Let the conatiner know that there is no tty
@@ -10,6 +10,7 @@ RUN apt-get install -y --no-install-recommends \
     unzip \
     wget \
     zip \
+    libfontconfig-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the "start" script
