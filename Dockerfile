@@ -10,6 +10,7 @@ RUN apt-get install -y --no-install-recommends \
     unzip \
     wget \
     zip \
+    libfontconfig-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the "start" script
