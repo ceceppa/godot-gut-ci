@@ -22,7 +22,8 @@ if [[ $is_version_4 == "true" ]]; then
 else
   echo "Downloading Godot3"
 
-  wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
+  # Use official release download
+  wget https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
 
   # Unzip it
   unzip Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
