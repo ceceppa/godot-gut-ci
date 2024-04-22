@@ -42,7 +42,7 @@ TEMP_FILE=/tmp/gut.log
 $GODOT_BIN -d -s $GODOT_PARAMS --path $PWD addons/gut/gut_cmdln.gd -gexit $GUT_PARAMS 2>&1 | tee $TEMP_FILE
 
 # Godot always exists with error 0, but we want this action to fail in case of errors
-if grep -q "No tests ran" "$TEMP_FILE";
+if grep -q "No tests ran" "$TEMP_FILE" || grep -qE "Asserts\s+none" "$TEMP_FILE";
 then
   echo "No test ran. Please check your 'gut_params'"
   exit 1
